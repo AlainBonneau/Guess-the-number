@@ -1,0 +1,51 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#global-container {
+    border: 2px solid hsla(254, 100%, 50%, 1);
+    border-radius: 25px;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: hsla(192, 100%, 50%, 1);
+}
+
+#guess-number {
+    margin: 30px;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    /* border: 2px solid hsla(192, 100%, 50%, 1); */
+}
+
+#valid-btn {
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: hsla(192, 100%, 50%, 1);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#valid-btn:hover {
+    background-color: hsla(192, 100%, 60%, 1);
+}
+
+#valid-btn:active {
+    background-color: hsla(192, 100%, 70%, 1);
+}
