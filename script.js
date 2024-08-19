@@ -6,17 +6,24 @@ let randomNumber = Math.round(Math.random() * 100);
 let counter = 1;
 console.log(randomNumber);
 
+function refreshPage() {
+  location.reload();
+}
+
 function userGuess(e) {
   e.preventDefault();
   const parseGuessedNumber = parseInt(GuessedNumber.value);
   console.log(GuessedNumber.value);
   if (parseGuessedNumber === randomNumber) {
-    goodNumber.innerHTML = `Vous avez trouvé le bon nombre : ${randomNumber}`;
+    goodNumber.innerHTML = `Vous avez trouvé le bon nombre : ${randomNumber} en ${counter} essais`;
+    setTimeout(refreshPage, 10000);
   } else if (parseGuessedNumber < randomNumber) {
     GuessedNumber.value = "";
+    counter++;
     goodNumber.innerHTML = `C'est plus que ${parseGuessedNumber}`;
   } else if (parseGuessedNumber > randomNumber) {
     GuessedNumber.value = "";
+    counter++;
     goodNumber.innerHTML = `C'est moins que ${parseGuessedNumber}`;
   } else {
     console.log("Erreur");
