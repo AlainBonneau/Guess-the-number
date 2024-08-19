@@ -1,3 +1,18 @@
+:root {
+
+
+
+    --color-primary: hsla(50, 80%, 70%, 1);
+    --color-primary-hover: hsla(50, 80%, 80%, 1);
+    --color-primary-active: hsla(50, 80%, 90%, 1);
+
+
+    --color-white: #fff;
+    --color-black: #000;
+
+
+}
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -9,7 +24,7 @@ body {
 }
 
 #global-container {
-    border: 2px solid hsla(254, 100%, 50%, 1);
+    border: 2px solid var(--color-primary);
     border-radius: 25px;
     padding: 100px;
     display: flex;
@@ -18,7 +33,7 @@ body {
 }
 
 h1 {
-    color: hsla(192, 100%, 50%, 1);
+    color: var(--color-primary);
 }
 
 #form {
@@ -37,11 +52,17 @@ h1 {
     /* border: 2px solid hsla(192, 100%, 50%, 1); */
 }
 
+#good-number {
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
 .valid-btn {
     padding: 15px 30px;
     border-radius: 10px;
     border: none;
-    background-color: hsla(192, 100%, 50%, 1);
+    background-color: var(--color-primary);
     color: white;
     font-size: 1rem;
     font-weight: bold;
@@ -49,9 +70,9 @@ h1 {
 }
 
 .valid-btn:hover {
-    background-color: hsla(192, 100%, 60%, 1);
+    background-color: var(--color-primary-hover);
 }
 
 .valid-btn:active {
-    background-color: hsla(192, 100%, 70%, 1);
+    background-color: var(--color-primary-active);
 }
