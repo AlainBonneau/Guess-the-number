@@ -6,7 +6,7 @@
     --color-primary-hover: hsla(50, 80%, 80%, 1);
     --color-primary-active: hsla(50, 80%, 90%, 1);
 
-    --color-secondary: hsla(210, 60%, 80%, 1);
+    --color-secondary: hsla(60, 15%, 95%, 1);
 
 
     --color-white: #fff;
@@ -16,6 +16,7 @@
 }
 
 body {
+    background-color: var(--color-primary);
     box-sizing: border-box;
     margin: 0;
     height: 100vh;

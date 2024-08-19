@@ -14,7 +14,7 @@ function refreshPage() {
 }
 
 function timeCalcul() {
-  const countDown = new Date().getTime() + 10000;
+  const countDown = new Date().getTime() + 60000;
   const x = setInterval(function () {
     const timeNow = new Date().getTime();
     const distance = countDown - timeNow;
