@@ -26,7 +26,8 @@ function userGuess(e) {
     counter++;
     goodNumber.innerHTML = `C'est moins que ${parseGuessedNumber}`;
   } else {
-    console.log("Erreur");
+    console.log("C'est vide");
+    goodNumber.innerHTML = "C'est vide..."
   }
 }
 

@@ -6,6 +6,8 @@
     --color-primary-hover: hsla(50, 80%, 80%, 1);
     --color-primary-active: hsla(50, 80%, 90%, 1);
 
+    --color-secondary: hsla(210, 60%, 80%, 1);
+
 
     --color-white: #fff;
     --color-black: #000;
@@ -24,6 +26,7 @@ body {
 }
 
 #global-container {
+    background-color: var(--color-secondary);
     border: 2px solid var(--color-primary);
     border-radius: 25px;
     padding: 100px;
@@ -63,7 +66,7 @@ h1 {
     border-radius: 10px;
     border: none;
     background-color: var(--color-primary);
-    color: white;
+    color: var(--color-white);
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
