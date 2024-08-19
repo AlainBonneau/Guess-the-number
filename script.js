@@ -10,15 +10,17 @@ let isGameOver = false;
 let isCountOn = false;
 console.log(randomNumber);
 
+// Fonction qui permet de rafraîchir la page.
 function refreshPage() {
   location.reload();
 }
 
-// Fonction de test
+// Fonction qui affiche le bouton "Rejouer" une fois la partie terminée.
 function replayButton() {
   replayBtn.classList.remove("replay-btn--hidden");
 }
 
+// Fonction qui calcule le temps qu'il reste dans la partie et l'affiche à la fin de celle-ci.
 function timeCalcul() {
   const countDown = new Date().getTime() + 60000;
   const x = setInterval(function () {
@@ -41,6 +43,7 @@ function timeCalcul() {
   }, 1000);
 }
 
+//Fonction principale de l'application, c'est elle qui se lance une fois que l'utilisateur clique sur le bouton "Jouer". Elle indique à celui-ci si le nombre qu'il donne est trop petit, trop grand ou s'il s'agit du bon numéro.
 function userGuess(e) {
   e.preventDefault();
   const parseGuessedNumber = parseInt(GuessedNumber.value);
