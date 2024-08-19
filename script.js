@@ -2,6 +2,7 @@ const GuessedNumber = document.getElementById("guess-number");
 const form = document.getElementById("form");
 const goodNumber = document.getElementById("good-number");
 const timeLeft = document.getElementById("time-left");
+const replayBtn = document.getElementById("replay-btn");
 
 let randomNumber = Math.round(Math.random() * 1000);
 let counter = 1;
@@ -11,6 +12,11 @@ console.log(randomNumber);
 
 function refreshPage() {
   location.reload();
+}
+
+// Fonction de test
+function replayButton() {
+  replayBtn.classList.remove("replay-btn--hidden");
 }
 
 function timeCalcul() {
@@ -30,6 +36,7 @@ function timeCalcul() {
         counter - 1
       } essais.`;
       isGameOver = true;
+      replayButton();
     }
   }, 1000);
 }
@@ -53,6 +60,8 @@ function userGuess(e) {
   console.log(GuessedNumber.value);
   if (parseGuessedNumber === randomNumber) {
     goodNumber.innerHTML = `Vous avez trouvé le bon nombre : ${randomNumber} en ${counter} essais. Félicitation !`;
+    isGameOver = true;
+    replayButton();
   } else if (parseGuessedNumber < randomNumber) {
     GuessedNumber.value = "";
     counter++;
@@ -68,3 +77,4 @@ function userGuess(e) {
 }
 
 form.addEventListener("submit", userGuess);
+replayBtn.addEventListener("click", refreshPage);

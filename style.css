@@ -85,3 +85,28 @@ h1 {
 .valid-btn:active {
     background-color: var(--color-primary-active);
 }
+
+.replay-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.replay-btn:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.replay-btn:active {
+    background-color: var(--color-primary-active);
+}
+
+.replay-btn--hidden {
+    display: none;
+}
