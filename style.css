@@ -28,6 +28,7 @@ body {
 #global-container {
     background-color: var(--color-secondary);
     border: 2px solid var(--color-primary);
+    width: 60%;
     border-radius: 25px;
     padding: 100px;
     display: flex;
@@ -37,6 +38,10 @@ body {
 
 h1 {
     color: var(--color-primary);
+}
+
+.info {
+    text-align: center;
 }
 
 #form {
