@@ -8,7 +8,6 @@ let randomNumber = Math.round(Math.random() * 1000);
 let counter = 1;
 let isGameOver = false;
 let isCountOn = false;
-console.log(randomNumber);
 
 // Fonction qui permet de rafraîchir la page.
 function refreshPage() {
@@ -60,7 +59,6 @@ function userGuess(e) {
     isCountOn = true;
   }
 
-  console.log(GuessedNumber.value);
   if (parseGuessedNumber === randomNumber) {
     goodNumber.innerHTML = `Vous avez trouvé le bon nombre : ${randomNumber} en ${counter} essais. Félicitation !`;
     isGameOver = true;
@@ -74,7 +72,6 @@ function userGuess(e) {
     counter++;
     goodNumber.innerHTML = `C'est moins que ${parseGuessedNumber}`;
   } else {
-    console.log("C'est vide");
     goodNumber.innerHTML = "C'est vide...";
   }
 }
