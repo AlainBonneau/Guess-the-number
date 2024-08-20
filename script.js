@@ -28,14 +28,14 @@ function timeCalcul() {
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     if (!isGameOver) {
-      timeLeft.innerHTML = `Il vous reste ${seconds} secondes !`;
+      timeLeft.innerHTML = `Il vous reste <span class="span-good">${seconds}</span> secondes !`;
     }
 
     if (seconds <= 0) {
       clearInterval(x);
-      timeLeft.innerHTML = `Temps écoulé ! Le bon nombre était : ${randomNumber}. Vous n'avez pas trouvé le nombre en ${
+      timeLeft.innerHTML = `Temps écoulé ! Le bon nombre était : <span class="span-good">${randomNumber}</span>. Vous n'avez pas trouvé le nombre en <span class="span-good">${
         counter - 1
-      } essais.`;
+      }</span> essais.`;
       isGameOver = true;
       replayButton();
     }
@@ -60,17 +60,17 @@ function userGuess(e) {
   }
 
   if (parseGuessedNumber === randomNumber) {
-    goodNumber.innerHTML = `Vous avez trouvé le bon nombre : ${randomNumber} en ${counter} essais. Félicitation !`;
+    goodNumber.innerHTML = `Vous avez trouvé le bon nombre : <span class="span-good">${randomNumber}</span> en <span class="span-good">${counter}</span> essais. Félicitation !`;
     isGameOver = true;
     replayButton();
   } else if (parseGuessedNumber < randomNumber) {
     GuessedNumber.value = "";
     counter++;
-    goodNumber.innerHTML = `C'est plus que ${parseGuessedNumber}`;
+    goodNumber.innerHTML = `C'est plus que <span class="span-good">${parseGuessedNumber}</span>`;
   } else if (parseGuessedNumber > randomNumber) {
     GuessedNumber.value = "";
     counter++;
-    goodNumber.innerHTML = `C'est moins que ${parseGuessedNumber}`;
+    goodNumber.innerHTML = `C'est moins que <span class="span-good">${parseGuessedNumber}</span>`;
   } else {
     goodNumber.innerHTML = "C'est vide...";
   }
