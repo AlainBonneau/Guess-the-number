@@ -19,7 +19,7 @@ function replayButton() {
   replayBtn.classList.remove("replay-btn--hidden");
 }
 
-// Fonction qui calcule le temps qu'il reste dans la partie et l'affiche à la fin de celle-ci.
+// Fonction qui calcule le temps qu'il reste dans la partie et l'affiche sur la page.
 function timeCalcul() {
   const countDown = new Date().getTime() + 60000;
   const x = setInterval(function () {
