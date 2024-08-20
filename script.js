@@ -25,7 +25,6 @@ function replayButton() {
 // fonction qui diminue le nombre d'essai du joueur à chaque fois qu'il se trompe
 function gameCounter() {
   tryCounter--;
-  console.log(tryCounter);
   tryCount.innerHTML = `Il vous reste ${tryCounter} essais`;
 
   if (tryCounter === 1 || tryCounter === 0) {
@@ -48,7 +47,7 @@ function gameOverBtn() {
 
 // Fonction qui calcule le temps qu'il reste dans la partie et l'affiche sur la page.
 function timeCalcul() {
-  const countDown = new Date().getTime() + 5000;
+  const countDown = new Date().getTime() + 60000;
   const x = setInterval(function () {
     const timeNow = new Date().getTime();
     const distance = countDown - timeNow;
