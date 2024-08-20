@@ -3,9 +3,12 @@ const form = document.getElementById("form");
 const goodNumber = document.getElementById("good-number");
 const timeLeft = document.getElementById("time-left");
 const replayBtn = document.getElementById("replay-btn");
+const tryCount = document.getElementById("try-count");
+const gameOver = document.getElementById("game-over");
 
 let randomNumber = Math.round(Math.random() * 1000);
 let counter = 1;
+let tryCounter = 10;
 let isGameOver = false;
 let isCountOn = false;
 
@@ -19,9 +22,33 @@ function replayButton() {
   replayBtn.classList.remove("replay-btn--hidden");
 }
 
+// fonction qui diminue le nombre d'essai du joueur à chaque fois qu'il se trompe
+function gameCounter() {
+  tryCounter--;
+  console.log(tryCounter);
+  tryCount.innerHTML = `Il vous reste ${tryCounter} essais`;
+
+  if (tryCounter === 1 || tryCounter === 0) {
+    tryCount.innerHTML = `Il vous reste ${tryCounter} essai`;
+  }
+
+  if (tryCounter === 0) {
+    isGameOver = true;
+    tryCount.innerHTML = "Vous avez épuisé tous vos essais.";
+    gameOverBtn();
+  }
+}
+
+function gameOverBtn() {
+  if (isGameOver) {
+    gameOver.classList.add("game-over");
+    gameOver.innerHTML = "GAMEOVER";
+  }
+}
+
 // Fonction qui calcule le temps qu'il reste dans la partie et l'affiche sur la page.
 function timeCalcul() {
-  const countDown = new Date().getTime() + 60000;
+  const countDown = new Date().getTime() + 5000;
   const x = setInterval(function () {
     const timeNow = new Date().getTime();
     const distance = countDown - timeNow;
@@ -37,6 +64,7 @@ function timeCalcul() {
         counter - 1
       }</span> essais.`;
       isGameOver = true;
+      gameOverBtn();
       replayButton();
     }
   }, 1000);
@@ -66,10 +94,12 @@ function userGuess(e) {
   } else if (parseGuessedNumber < randomNumber) {
     GuessedNumber.value = "";
     counter++;
+    gameCounter();
     goodNumber.innerHTML = `C'est plus que <span class="span-good">${parseGuessedNumber}</span>`;
   } else if (parseGuessedNumber > randomNumber) {
     GuessedNumber.value = "";
     counter++;
+    gameCounter();
     goodNumber.innerHTML = `C'est moins que <span class="span-good">${parseGuessedNumber}</span>`;
   } else {
     goodNumber.innerHTML = "C'est vide...";

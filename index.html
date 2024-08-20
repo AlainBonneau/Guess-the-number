@@ -11,11 +11,12 @@
 
     <div class="global-container">
         <h1>Le juste prix !</h1>
-        <p class="info">Trouvez le juste prix avant la fin du temps imparti !<br>Le nombre ce situe entre 0 & 1000</p>
+        <p class="info">Trouvez le juste prix avant la fin du temps imparti (60 secondes) !<br>Vous avez 10 essais <br>Le nombre ce situe entre 0 & 1000</p>
         <p id="time-left"></p>
+        <p id="try-count">Il vous reste 10 essais</p>
         <form id="form" action="get">
         <input id="guess-number" type="number">
-        <br>
+        <p id="game-over"></p>
         <p id="good-number"></p>
         <button class="valid-btn">Valider</button>
         </form>
