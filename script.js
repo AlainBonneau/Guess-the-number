@@ -11,6 +11,7 @@ let counter = 1;
 let tryCounter = 10;
 let isGameOver = false;
 let isCountOn = false;
+console.log(randomNumber);
 
 // Fonction qui permet de rafraîchir la page.
 function refreshPage() {
@@ -57,6 +58,11 @@ function timeCalcul() {
     const timeNow = new Date().getTime();
     const distance = countDown - timeNow;
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    console.log(seconds);
+
+    if (isGameOver) {
+      clearInterval(x);
+    }
 
     if (!isGameOver) {
       timeLeft.innerHTML = `Il vous reste <span class="span-good">${seconds}</span> secondes !`;
@@ -92,7 +98,9 @@ function userGuess(e) {
   }
 
   if (parseGuessedNumber === randomNumber) {
-    goodNumber.innerHTML = `Vous avez trouvé le bon nombre : <span class="span-good">${randomNumber}</span> en <span class="span-good">${counter - 1}</span> essais. Félicitation !`;
+    goodNumber.innerHTML = `Vous avez trouvé le bon nombre : <span class="span-good">${randomNumber}</span> en <span class="span-good">${
+      counter - 1
+    }</span> essais. Félicitation !`;
     isGameOver = true;
     replayButton();
   } else if (parseGuessedNumber < randomNumber) {
