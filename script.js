@@ -92,7 +92,7 @@ function userGuess(e) {
   }
 
   if (parseGuessedNumber === randomNumber) {
-    goodNumber.innerHTML = `Vous avez trouvé le bon nombre : <span class="span-good">${randomNumber}</span> en <span class="span-good">${counter}</span> essais. Félicitation !`;
+    goodNumber.innerHTML = `Vous avez trouvé le bon nombre : <span class="span-good">${randomNumber}</span> en <span class="span-good">${counter - 1}</span> essais. Félicitation !`;
     isGameOver = true;
     replayButton();
   } else if (parseGuessedNumber < randomNumber) {
