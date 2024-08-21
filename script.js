@@ -25,15 +25,15 @@ function replayButton() {
 // fonction qui diminue le nombre d'essai du joueur à chaque fois qu'il se trompe
 function gameCounter() {
   tryCounter--;
-  tryCount.innerHTML = `Il vous reste ${tryCounter} essais`;
+  tryCount.innerHTML = `Il vous reste <span class="span-good">${tryCounter}</span> essais`;
 
   if (tryCounter === 1 || tryCounter === 0) {
-    tryCount.innerHTML = `Il vous reste ${tryCounter} essai`;
+    tryCount.innerHTML = `Il vous reste <span class="span-good">${tryCounter}</span> essai`;
   }
 
   if (tryCounter === 0) {
     isGameOver = true;
-    tryCount.innerHTML = "Vous avez épuisé tous vos essais.";
+    tryCount.innerHTML = `Vous avez <span class="span-good">épuisé</span> tous vos essais.`;
     gameOverBtn();
   }
 }
