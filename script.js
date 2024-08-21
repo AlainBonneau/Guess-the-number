@@ -38,6 +38,7 @@ function gameCounter() {
   }
 }
 
+// Fonction qui affiche un bouton gameover si l'utilisateur perd.
 function gameOverBtn() {
   if (isGameOver) {
     gameOver.classList.add("game-over");
