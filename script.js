@@ -34,7 +34,11 @@ function gameCounter() {
   if (tryCounter === 0) {
     isGameOver = true;
     tryCount.innerHTML = `Vous avez <span class="span-good">épuisé</span> tous vos essais.`;
+    timeLeft.innerHTML = `Temps écoulé ! Le bon nombre était : <span class="span-good">${randomNumber}</span>. Vous n'avez pas trouvé le nombre en <span class="span-good">${
+      counter - 1
+    }</span> essais.`;
     gameOverBtn();
+    replayButton();
   }
 }
 
