@@ -1,6 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.timeCalcul = timeCalcul;
 var GuessedNumber = document.getElementById("guess-number");
 var form = document.getElementById("form");
 var goodNumber = document.getElementById("good-number");
@@ -13,7 +10,6 @@ var counter = 1;
 var tryCounter = 10;
 var isGameOver = false;
 var isCountOn = false;
-console.log(randomNumber);
 // Fonction qui permet de rafraîchir la page.
 function refreshPage() {
     location.reload();

@@ -11,7 +11,6 @@ let counter: number = 1;
 let tryCounter: number = 10;
 let isGameOver: boolean = false;
 let isCountOn: boolean = false;
-console.log(randomNumber);
 
 
 // Fonction qui permet de rafraîchir la page.
@@ -50,7 +49,7 @@ function gameOverBtn(): void {
 }
 
 // Fonction qui calcule le temps qu'il reste dans la partie et l'affiche sur la page.
-export function timeCalcul(): void {
+function timeCalcul(): void {
   const countDown: number = new Date().getTime() + 60000;
   const x: number = setInterval(function () {
     const timeNow: number = new Date().getTime();
