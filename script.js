@@ -17,7 +17,7 @@ function refreshPage() {
   location.reload();
 }
 
-// Fonction qui affiche le bouton "Rejouer" une fois la partie terminée.
+// Fonction qui affiche le bouton "Rejouer".
 function replayButton() {
   replayBtn.classList.remove("replay-btn--hidden");
 }
@@ -37,6 +37,7 @@ function gameCounter() {
     timeLeft.innerHTML = `Temps écoulé ! Le bon nombre était : <span class="span-good">${randomNumber}</span>. Vous n'avez pas trouvé le nombre en <span class="span-good">${
       counter - 1
     }</span> essais.`;
+    blockInput();
     gameOverBtn();
     replayButton();
   }
@@ -72,10 +73,16 @@ function timeCalcul() {
         counter - 1
       }</span> essais.`;
       isGameOver = true;
+      blockInput();
       gameOverBtn();
       replayButton();
     }
   }, 1000);
+}
+
+// Fonction qui clear l'input
+function blockInput() {
+  GuessedNumber.setAttribute("readonly", "");
 }
 
 //Fonction principale de l'application, c'est elle qui se lance une fois que l'utilisateur clique sur le bouton "Jouer". Elle indique à celui-ci si le nombre qu'il donne est trop petit, trop grand ou s'il s'agit du bon numéro.
@@ -100,6 +107,7 @@ function userGuess(e) {
       counter - 1
     }</span> essais. Félicitation !`;
     isGameOver = true;
+    blockInput();
     replayButton();
   } else if (parseGuessedNumber < randomNumber) {
     GuessedNumber.value = "";
