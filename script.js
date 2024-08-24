@@ -62,7 +62,7 @@ function timeCalcul() {
         }
     }, 1000);
 }
-// Fonction qui clear l'input
+// Fonction qui bloque l'input une fois la partie terminée.
 function blockInput() {
     GuessedNumber.setAttribute("readonly", "");
 }
